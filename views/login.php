@@ -9,7 +9,7 @@ include('../includes/header.php');
         <hr />
         <br />
 
-        <form id="form_login" action="../controllers/Login.php" method="post" autocomplete="off">
+        <form id="form_login" action="../controllers/Login.php?action=login" method="post" autocomplete="off">
 
             <div class="form-group">
                 <h5><label for="email">Podaj adres email</label></h5>
@@ -25,7 +25,7 @@ include('../includes/header.php');
         </form>
     </div>
     <div class="col-6 offset-1 imgContainer">
-        <img id="login" src="../assets/images/photoLogin.jpg" height="600" width="700" class="hidden">
+        <img id="login" src="../assets/images/photoLogin.jpg" class="imgContainer" height="600" width="700" class="hidden">
     </div>
 </div>
 
