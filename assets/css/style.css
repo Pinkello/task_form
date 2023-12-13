@@ -20,11 +20,29 @@ body footer {
 body footer .fi {
   text-decoration: none;
 }
+body #liveToast .toast.show .toast-header strong {
+  color: #ff0000;
+}
+body #liveToast .toast.show .toast-header small {
+  color: #ff0000;
+}
+body #liveToast .toast.show .toast-body {
+  color: #ff0000;
+}
 body .main-content {
   height: calc(100% - 120px);
   min-height: calc(100vh - 120px);
   background-color: #f1f1f1;
   display: flex;
+}
+body .main-content #liveToast .toast.show .toast-header strong {
+  color: #ff0000;
+}
+body .main-content #liveToast .toast.show .toast-header small {
+  color: #ff0000;
+}
+body .main-content #liveToast .toast.show .toast-body {
+  color: #ff0000;
 }
 body .main-content .sidenav {
   height: 100%;
@@ -75,7 +93,8 @@ body .main-content #main .content_home {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 body .main-content #main .content_home .title_home {
   display: flex;
@@ -92,6 +111,9 @@ body .main-content #main .content_home .form_inside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+body .main-content #main .content_home .form_inside .error-message {
+  color: #ff0000;
 }
 body .main-content #main .content_home .form_inside form {
   width: 80%;
