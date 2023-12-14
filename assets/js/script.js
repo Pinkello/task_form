@@ -1,11 +1,10 @@
 $(document).ready(function () {
+  //form validation
   document
     .getElementById("submitButton")
     .addEventListener("click", function () {
-      // Resetowanie komunikatów o błędach
       resetErrorMessages();
 
-      // Sprawdzenie warunków walidacji
       validateAndDisplay("inputName", "Proszę podać imię.");
       validateAndDisplay("inputSurname", "Proszę podać nazwisko.");
       validateAndDisplay(
@@ -30,27 +29,24 @@ $(document).ready(function () {
       );
       validateAttachmentAndDisplay("attachment2", "Proszę załączyć CV.");
 
-      // Tutaj możesz dodawać inne warunki walidacji dla dodatkowych plików
-
-      // Sprawdzenie warunków dotyczących staży
+      // if error
       const internshipsValid = validateInternships();
       if (!internshipsValid) {
-        displayErrorMessage(
-          "Proszę podać wszystkie informacje dotyczące stażu."
+        displayErrorMessageInternship(
+          "Proszę podać wszystkie informacje dotyczące stażów."
         );
       }
-
-      // Jeśli nie wystąpiły błędy, możesz przesłać formularz
+      // if everything good
       if (allValid()) {
         document.getElementById("myForm").submit();
       }
     });
+
   function validateSelect(inputId, errorMessage) {
     const selectedValue = document.getElementById(inputId).value;
     return selectedValue !== "";
   }
 
-  // Funkcje walidacji dla poszczególnych pól
   function validateAndDisplay(
     inputId,
     errorMessage,
@@ -71,13 +67,11 @@ $(document).ready(function () {
 
   function validateEmail(inputId) {
     const email = document.getElementById(inputId).value.trim();
-    // Prosta walidacja adresu email, można rozbudować
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
   function validateDate(inputId) {
     const date = document.getElementById(inputId).value.trim();
-    // Prosta walidacja daty, można rozbudować
     return /^\d{4}-\d{2}-\d{2}$/.test(date);
   }
 
@@ -114,7 +108,6 @@ $(document).ready(function () {
     return true;
   }
 
-  // Resetuje komunikaty o błędach
   function resetErrorMessages() {
     const errorMessages = document.querySelectorAll(".error-message");
     errorMessages.forEach((message) => {
@@ -122,41 +115,26 @@ $(document).ready(function () {
     });
   }
 
-  // Wyświetla komunikat o błędzie pod danym polem
   function displayErrorMessage(messageText, inputId) {
+    console.log("id");
+    console.log(inputId);
     const errorMessage = document.createElement("div");
     errorMessage.classList.add("error-message");
     errorMessage.classList.add("text-danger");
-    errorMessage.classList.add("font-weight-bold");
     errorMessage.textContent = messageText;
     const inputElement = document.getElementById(inputId);
     inputElement.parentNode.appendChild(errorMessage);
   }
 
-  // Sprawdza, czy wszystkie warunki są spełnione
-  function allValid() {
-    const errorMessages = document.querySelectorAll(".error-message");
-    return errorMessages.length === 0;
-  }
-
-  // Resetuje komunikaty o błędach
-  function resetErrorMessages() {
-    const errorMessages = document.querySelectorAll(".error-message");
-    errorMessages.forEach((message) => {
-      message.remove();
-    });
-  }
-
-  // Wyświetla komunikat o błędzie pod danym polem
-  function displayErrorMessage(messageText, inputId) {
+  function displayErrorMessageInternship(messageText) {
     const errorMessage = document.createElement("div");
     errorMessage.classList.add("error-message");
+    errorMessage.classList.add("text-danger");
     errorMessage.textContent = messageText;
-    const inputElement = document.getElementById(inputId);
-    inputElement.parentNode.appendChild(errorMessage);
+    const inputElement = document.getElementById("internship-error");
+    inputElement.appendChild(errorMessage);
   }
 
-  // Sprawdza, czy wszystkie warunki są spełnione
   function allValid() {
     const errorMessages = document.querySelectorAll(".error-message");
     return errorMessages.length === 0;
@@ -267,10 +245,12 @@ $(document).ready(function () {
   }
 });
 
+//display toasts
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const successParam = urlParams.get("success");
   const failParam = urlParams.get("fail");
+  const failLoginParam = urlParams.get("failLogin");
 
   if (successParam === "1") {
     const toastLiveExample = document.getElementById("liveToast");
@@ -299,7 +279,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 2000);
     }
   }
+  if (failLoginParam === "1") {
+    const toastLiveExample = document.getElementById("loginToast1");
+    if (toastLiveExample) {
+      const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+      setTimeout(() => {
+        toastBootstrap.show();
+      }, 1000);
+    }
+  }
 
+  //add new internships
   const addInternshipBtn = document.getElementById("addInternshipBtn");
   const internshipContainer = document.getElementById("internshipContainer");
 
@@ -326,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     internshipContainer.appendChild(newInternshipEntry);
 
-    // Aktualizuj widoczność przycisków
     updateButtonsVisibility();
   });
 
@@ -335,25 +324,22 @@ document.addEventListener("DOMContentLoaded", function () {
       "internship-entry"
     );
 
-    // Sprawdź czy są staże do usunięcia
     if (internshipEntries.length > 0) {
-      // Usuń ostatnio dodane pola dla stażu
       internshipContainer.removeChild(
         internshipEntries[internshipEntries.length - 1]
       );
 
-      // Aktualizuj widoczność przycisków
       updateButtonsVisibility();
     }
   }
 
+  //button for remove internship
   function updateButtonsVisibility() {
     const internshipEntries = document.getElementsByClassName(
       "internship-entry"
     );
     const removeInternshipBtn = document.getElementById("removeInternshipBtn");
 
-    // Ustaw widoczność przycisku "Usuń staż" w zależności od liczby staży
     removeInternshipBtn.style.display =
       internshipEntries.length > 0 ? "inline-block" : "none";
   }

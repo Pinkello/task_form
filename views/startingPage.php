@@ -7,7 +7,7 @@ include('../includes/header.php');
         <div class="main col-10 col-10 col-offset-1">
             <br />
             <div class="title">
-                <p> Witam w aplikacji </p>
+                <p> Witam w aplikacji dla kandydatów Nexitsoft </p>
 
             </div>
             <hr>
@@ -15,7 +15,7 @@ include('../includes/header.php');
 
             <div class="subtitle">
                 <h4>
-                    Apka do wysylania formularza
+                    Aplikacja służy do wysyłania formularzy
                 </h4>
 
             </div>

@@ -1,11 +1,8 @@
 <?php
 include('../includes/header.php');
 if (isset($_SESSION['form_data'])) {
-
     $formData = $_SESSION['form_data'];
-    var_dump($_SESSION['form_data']['inputEducation']);
 }
-
 
 ?>
 
@@ -80,59 +77,27 @@ if (isset($_SESSION['form_data'])) {
                         <div class="mb-3 checks hidden">
                             <label for="attachment" class="form-label"><b>Dodatkowy plik</b></label>
                             <input type="file" class="form-control" id="attachment3" name="attachment3">
-                            <div class="form-text">Akceptowane formaty: DOC, PDF, JPG/JPEG</div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <h5><b>Staże</b></h5>
                         <div id="internshipContainer"></div>
                         <br />
+                        <div id="internship-error"></div>
+                        <br />
                         <button type="button" id="addInternshipBtn" class="btn btn-primary">Dodaj staż</button>
                         <button type="button" id="removeInternshipBtn" class="btn btn-danger" style="display: none;">Usuń staż</button>
 
                     </div>
                     <br />
+
                     <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
 
                 </form>
             </div>
 
 
-            <div class="toast-container position-fixed top-0 end-0 p-5">
-                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header greenText">
-                        <strong class="me-auto">Pomyślnie wysłano formularz</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Dziękujemy za dodanie formularza!
-                    </div>
-                </div>
-            </div>
 
-            <div class="toast-container position-fixed top-0 end-0 p-5">
-                <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header greenText">
-                        <strong class="me-auto">Błąd!</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Niepoprawne rozszerzenie pliku!
-                    </div>
-                </div>
-            </div>
-
-            <div class="toast-container position-fixed top-0 end-0 p-5">
-                <div id="liveToast3" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header greenText">
-                        <strong class="me-auto">Błąd!</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Brak wszystkich wymaganych plików!
-                    </div>
-                </div>
-            </div>
 
         </div>
 

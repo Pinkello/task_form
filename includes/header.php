@@ -39,9 +39,11 @@ session_start();
 
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="startingPage.php">Strona startowa</a>
             <?php
             if (isset($_SESSION['user'])) { ?>
-                <a href="mainPage.php">Strona startowa</a>
+                <a href="mainPage.php">Formularz</a>
+                <a href="../controllers/ProfilePage.php?action=fetch">Profil</a>
                 <a href="../controllers/Login.php?action=logout">Wyloguj się</a>
             <?php } else { ?>
                 <a href="login.php">Zaloguj się</a>

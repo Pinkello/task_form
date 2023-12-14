@@ -5,7 +5,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 body header {
   height: 60px;
@@ -88,14 +87,18 @@ body .main-content #main {
   animation: slideFromTop 2s ease-in-out;
   transition: margin-left 0.5s;
   display: flex;
-  min-height: calc(100vh - 120px);
+  flex-direction: column;
 }
 body .main-content #main .content_home {
   display: flex;
   flex-direction: column;
   background-color: white;
+  min-height: calc(100vh - 120px);
   padding-top: 30px;
   padding-bottom: 30px;
+}
+body .main-content #main .content_home .profile_display ol li .font_blue {
+  color: #1141e2;
 }
 body .main-content #main .content_home .title_home {
   display: flex;
@@ -230,7 +233,7 @@ body .main-content .image:hover img {
   transform: scale(1.1);
 }
 body .main-content .imgContainer {
-  animation: slideFromRight 1s ease-in-out;
+  animation: appear 1s ease-in-out;
 }
 body .main-content textarea {
   color: black;
@@ -260,6 +263,14 @@ body .main-content .form-group {
     transform: translateX(0);
   }
 }
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes slideFromLeft {
   0% {
     opacity: 0;
@@ -285,4 +296,4 @@ body .main-content .form-group {
   100% {
     opacity: 1;
   }
-}
+}/*# sourceMappingURL=style.css.map */

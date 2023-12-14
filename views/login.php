@@ -1,6 +1,7 @@
 <?php
 include('../includes/header.php');
 ?>
+<script src="../assets/js/scriptLogin.js"></script>
 
 <div class="row col-12 gx-0 justify-content-center align-items-center ">
 
@@ -20,7 +21,7 @@ include('../includes/header.php');
                 <input type="password" id="password" class="form-control" name="password" placeholder="Hasło">
             </div>
             <div class="d-grid gap-2 mx-auto">
-                <button class="btn btn-primary" type="submit">Zaloguj się</button>
+                <button class="btn btn-primary" id="loginButton" type="button">Zaloguj się</button>
             </div>
         </form>
     </div>

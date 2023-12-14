@@ -1,13 +1,60 @@
- </section>
+<div class="toast-container position-fixed top-0 end-0 p-5">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header greenText">
+            <strong class="me-auto">Pomyślnie wysłano formularz</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Dziękujemy za dodanie formularza!
+        </div>
+    </div>
+</div>
 
- <footer class="footer-copyright text-center py-3">
-     <a class="fi fi-gb" href="#" role="button"></a>
-     <a class="fi fi-pl" href="#" role="button"></a>
-     &emsp;
-     © 2023 Copyright:
-     <a href="https://www.linkedin.com/in/piotr-pindel-a0358b187/"> Piotr Pindel</a>
- </footer>
+<div class="toast-container position-fixed top-0 end-0 p-5">
+    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header greenText">
+            <strong class="me-auto">Błąd!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Niepoprawne rozszerzenie pliku!
+        </div>
+    </div>
+</div>
 
- </body>
+<div class="toast-container position-fixed top-0 end-0 p-5">
+    <div id="liveToast3" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header greenText">
+            <strong class="me-auto">Błąd!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Brak wszystkich wymaganych plików!
+        </div>
+    </div>
+</div>
 
- </html>
+<div class="toast-container position-fixed top-0 end-0 p-5">
+    <div id="loginToast1" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header greenText">
+            <strong class="me-auto">Błąd!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Niepoprawne dane logowania!
+        </div>
+    </div>
+</div>
+
+</section>
+
+<footer class="footer-copyright text-center py-3">
+
+    &emsp;
+    © 2023 Copyright:
+    <a href="https://www.linkedin.com/in/piotr-pindel-a0358b187/"> Piotr Pindel</a>
+</footer>
+
+</body>
+
+</html>
