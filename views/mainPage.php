@@ -85,12 +85,12 @@ if (isset($_SESSION['form_data'])) {
                         <br />
                         <div id="internship-error"></div>
                         <br />
-                        <button type="button" id="addInternshipBtn" class="btn btn-primary">Dodaj staż</button>
+                        <button type="button" id="addInternshipBtn" class="btn btn-info">Dodaj staż</button>
                         <button type="button" id="removeInternshipBtn" class="btn btn-danger" style="display: none;">Usuń staż</button>
 
                     </div>
                     <br />
-
+                    <hr />
                     <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
 
                 </form>

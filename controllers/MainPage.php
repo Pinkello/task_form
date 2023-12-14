@@ -100,10 +100,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'submitForm') {
         }
     } catch (PDOException $e) {
         echo 'Błąd połączenia: ' . $e->getMessage();
-        header('Location: ../views/mainPage.php');
-        exit();
     }
 } else {
-    header('Location: ../views/mainPage.php');
-    exit();
+    echo 'Błąd połączenia2: ' . $e->getMessage();
 }

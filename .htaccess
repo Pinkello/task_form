@@ -3,4 +3,4 @@ RewriteEngine On
 # Jeśli żądany plik lub katalog nie istnieje przekieruj na strone 404
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /nexitsoft/views/404.php [L,R=301]
+RewriteRule ^(.*)$ /task_form/views/404.php [L,R=301]

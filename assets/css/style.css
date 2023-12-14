@@ -44,6 +44,9 @@ body .main-content #liveToast .toast.show .toast-header small {
 body .main-content #liveToast .toast.show .toast-body {
   color: #ff0000;
 }
+body .main-content .main .link1, body .main-content .main .link2 {
+  text-align: center;
+}
 body .main-content .sidenav {
   height: 100%;
   width: 0;
@@ -142,13 +145,8 @@ body .main-content #main .content_home .form_inside form .css-button-rounded--bl
   background: #fff;
   color: #2c0b8e;
 }
-body .main-content #main .content_home .form_inside form .checkSkills,
-body .main-content #main .content_home .form_inside form .checkTrainings,
-body .main-content #main .content_home .form_inside form .checkCompanies {
-  margin-left: 50px;
-}
-body .main-content #main .content_home .form_inside form .checkDepartments {
-  margin-left: 100px;
+body .main-content #main .content_home .form_inside form #submitButton {
+  float: right;
 }
 body .main-content #main .content_home .form_inside form .hidden {
   display: none;
@@ -296,4 +294,4 @@ body .main-content .form-group {
   100% {
     opacity: 1;
   }
-}/*# sourceMappingURL=style.css.map */
+}

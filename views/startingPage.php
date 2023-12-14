@@ -22,9 +22,8 @@ include('../includes/header.php');
             <br />
 
             <div class="row">
-                <div class="link1 col">
+                <div class="link1 col-6">
                     <div class="image fromLeft">
-
                         <a class="nav-link" href="https://www.codeigniter.com/user_guide/intro/index.html">
                             <div class="image-container">
                                 <img src="../assets/images/php8.png" height="300" width="400" class="hidden">
@@ -35,7 +34,7 @@ include('../includes/header.php');
                         </a>
                     </div>
                 </div>
-                <div class="link2 col">
+                <div class="link2 col-6">
                     <div class="image fromRight">
                         <a class="nav-link" href="https://www.mysql.com/">
                             <div class="image-container">
